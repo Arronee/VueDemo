@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+</head>
+<body>
+
+<div id="test">
+
+    <ul>
+        <li v-for ="n in evenNumbers">{{n}}</li>
+
+    </ul>
+</div>
+</body>
+
+<script>
+
+    var rm = new Vue({
+        el:'#test',
+        data:{
+
+            numbers:[1,2,3,4,5,6,7,8,9]
+        },
+
+        computed:{
+            evenNumbers:function () {
+                return this.numbers.filter(function (number) {
+
+                    return number%2 == 0;
+                })
+            }
+        }
+
+    })
+
+</script>
+</html>

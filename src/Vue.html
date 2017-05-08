@@ -12,6 +12,8 @@
 
     <p>{{message}}</p>
 
+
+    <!--v-model实现数据的双向绑定-->
     <input type = "text" v-model='message' >
 
 </div>
@@ -54,6 +56,28 @@
 
 </div>
 
+<div id="v-blidID">
+
+    <ul class="pagination">
+
+        <li v-for = "n in pageCount">
+
+            <!--<a href="javascript:void(0)"v-bind:class="activeNumber === n + 1 ? 'active' :">{{ n + 1 }}></a>-->
+            <a href="javascripit:void(0)" v-bind:class="activeNumber === n  ? 'active' : ''">{{ n  }}</a>
+        </li>
+    </ul>
+</div>
+
+<div id="v-onID">
+    <p>
+        <input type="text" v-model = "message">
+    </p>
+
+    <p>
+        <button v-on:click = "great">great</button>
+    </p>
+
+</div>
 
 </body>
 
@@ -72,6 +96,7 @@
 
     })
 
+    //v-if的用法
     var dataTest = {
         yes:true,
         no:false,
@@ -84,7 +109,7 @@
         data:dataTest
     })
 
-
+    //v-for的用法
     var vm=  new Vue({
         el:'#tableTest',
         data:{
@@ -108,6 +133,30 @@
             }]
         }
 
+    })
+
+    var blid = new Vue({
+        el: '#v-blidID',
+        data: {
+            activeNumber:1,
+            pageCount: 10
+        }
+    })
+
+
+    var onMess = new Vue({
+
+        el:'#v-onID',
+        data:{
+            message:"hello vue.js!"
+        },
+
+        methods:{
+
+            great:function () {
+                alert(this.message)
+            }
+        }
     })
 
 
