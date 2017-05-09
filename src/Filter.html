@@ -15,6 +15,17 @@
 
     </ul>
 </div>
+<div id="division">
+    <p>{{message}}</p>
+
+</div>
+<div id="doubleFor">
+
+    <ul v-for = "nums in numbers">
+        <li v-for = "n in nums">{{n}}</li>
+    </ul>
+
+</div>
 </body>
 
 <script>
@@ -37,5 +48,21 @@
 
     })
 
+    var dou = new Vue({
+        el:'#doubleFor',
+        data:{
+
+            numbers:[[1,2,3],[4,5,6],[7,8,9]]
+        }
+
+    })
+
+    var division = new Vue({
+        el:'#division',
+        data:{
+            message:"------------------分割线-------------------"
+        }
+
+    });
 </script>
 </html>
